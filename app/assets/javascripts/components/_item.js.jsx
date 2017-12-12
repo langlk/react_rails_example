@@ -19,6 +19,7 @@ var Item = createReactClass({
     var description = this.state.editable ? <input type='text' ref={(description) => { this.description = description; }} defaultValue={this.props.item.description} />: <p>{this.props.item.description}</p>;
     return(
       <div>
+        {this.state.editable ? <h3>Edit Item</h3> : null }
         {name}
         {description}
         <button onClick={this.handleEdit}>{this.state.editable ? 'Submit' : 'Edit' }</button>
